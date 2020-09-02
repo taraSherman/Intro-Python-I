@@ -1,3 +1,2 @@
 # Print "Hello, world!" to your terminal
-
-# Small change for initial commit
+print('Hello, world!')
