@@ -30,3 +30,24 @@ it should use today’s date to get the month and year.
 import sys
 import calendar
 from datetime import datetime
+
+def usercalendar():
+    today = datetime.today()
+    if len(sys.argv) == 1:
+        print(calendar.prmonth(today.year, today.month))
+    elif len(sys.argv) == 2:
+        print(calendar.prmonth(today.year, int(sys.argv[1])))
+    elif len(sys.argv) == 3:
+        print(calendar.prmonth(int(sys.argv[2]), int(sys.argv[1])))
+    else:
+        print('Please enter a valid month (1-12) and 4-digit year.')
+    quit()
+usercalendar()
+
+# ---------------------------------------------
+# sys.argv => values that are passed during calling of program along with the calling statement
+# python 14_cal.py 5 1972
+# sys.argv[0] => 14_cal.py
+# sys.argv[1] => 5
+# sys.argv[2] => 1972
+#--------------------------------------
