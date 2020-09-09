@@ -31,18 +31,19 @@ import sys
 import calendar
 from datetime import datetime
 
-def usercalendar():
-    today = datetime.today()
-    if len(sys.argv) == 1:
-        print(calendar.prmonth(today.year, today.month))
-    elif len(sys.argv) == 2:
-        print(calendar.prmonth(today.year, int(sys.argv[1])))
-    elif len(sys.argv) == 3:
-        print(calendar.prmonth(int(sys.argv[2]), int(sys.argv[1])))
-    else:
-        print('Please enter a valid month (1-12) and 4-digit year.')
-    quit()
-usercalendar()
+today = datetime.today()
+if len(sys.argv) == 1:
+    print(calendar.prmonth(today.year, today.month))
+elif len(sys.argv) == 2:
+    print(calendar.prmonth(today.year, int(sys.argv[1])))
+elif len(sys.argv) == 3:
+    print(calendar.prmonth(int(sys.argv[2]), int(sys.argv[1])))
+else:
+    print('Please enter a valid month (1-12) and 4-digit year.')
+quit()
+# Returns calendar followed by the word None
+# Entering year only returns "list index out of range"
+# Entering year only does not return usage statement
 
 # ---------------------------------------------
 # sys.argv => values that are passed during calling of program along with the calling statement
@@ -51,3 +52,15 @@ usercalendar()
 # sys.argv[1] => 5
 # sys.argv[2] => 1972
 #--------------------------------------
+# def usercalendar():
+#     today = datetime.today()
+#     if len(sys.argv) == 1:
+#         print(calendar.prmonth(today.year, today.month))
+#     elif len(sys.argv) == 2:
+#         print(calendar.prmonth(today.year, int(sys.argv[1])))
+#     elif len(sys.argv) == 3:
+#         print(calendar.prmonth(int(sys.argv[2]), int(sys.argv[1])))
+#     else:
+#         print('Please enter a valid month (1-12) and 4-digit year.')
+#     quit()
+# usercalendar()
